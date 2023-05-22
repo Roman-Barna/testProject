@@ -1,0 +1,45 @@
+@import "/src/assets/baseStyle/mixins.scss";
+
+.dots-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  .dots {
+    background-color: red;
+    border-radius: 50%;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 10px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    list-style-type: none;
+    @include sharedColor;
+    @include titleFont;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    .bi {
+      color: #fff;
+      font-size: 22px;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "/src/assets/baseStyle/mixins.scss";
+
+:host {
+  height: 100%;
+  
+}
+
+.wrapper {
+  height: 100%;
+  background-color: rgb(54, 54, 54);
+  min-height: 72vh;
+
+  h2 {
+    margin: 0;
+    padding: 15px 0;
+    @include sharedColor;
+    @include titleFont;
+  }
+
+  .container {
+    min-height: 100%;
+    width: 80%;
+    margin: 0 auto;
+
+    .movies-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 45%;
+
+      app-movie-card {
+        width: 20%;
+
+        @media  (max-width: 1024px)  {
+          & {
+            width: 33%
+          }
+        }
+        @media  (max-width: 768px)  {
+          & {
+            width: 50%
+          }
+        }
+        @media  (max-width: 450px)  {
+          & {
+            width: 100%
+          }
+        }
+      }
+    }
+  }
+}

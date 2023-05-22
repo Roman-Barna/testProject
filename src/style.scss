@@ -1,0 +1,38 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+
+// datePicker
+.mat-mdc-text-field-wrapper {
+    border-radius: 50px!important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+    display: none;
+    
+}
+  
+::ng-deep .mat-datepicker {
+    background:lightblue;
+  }
+  
+::ng-deep .mat-datepicker .mat-calendar-body-today:not(.mat-calendar-body-selected){
+    border-color:rgb(168, 28, 23);
+  }
+
+ .mat-calendar-body-selected {
+    background-color: rgb(168, 28, 23);
+  }
+
+  ::ng-deep .mat-datepicker-input {
+    border-radius: 50%;
+  }

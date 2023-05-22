@@ -1,0 +1,18 @@
+<div class="wrapper" *ngIf="cards">
+  <div class="container">
+    <h2>Popular {{ typeMovies | titlecase }}</h2>
+    <div class="movies-list">
+      <ng-container
+        *ngFor="
+          let card of cards.entries | filterCard : typeMovies : filtered: filteredDate : page;
+        "
+      >
+        <app-movie-card [card]="card"></app-movie-card>
+      </ng-container>
+    </div>
+    <app-paginate
+      (paginate)="paginate($event)"
+      [firstToTal]="paginationTotal"
+    ></app-paginate>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+@import "/src/assets/baseStyle/mixins.scss";
+
+:host {
+  height: auto;
+
+  .home {
+    display: flex;
+    height: auto;
+    max-height: 72vh;
+    min-height: 72vh;
+
+    @media  (max-width: 420px)  {
+      & {
+        min-height: 65vh;
+        max-height: 65vh
+      }
+    }
+
+    .image-block {
+      position: relative;
+      width: 50%;
+      max-height: 100%;
+      cursor: pointer;
+      transition: 0.6s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      img {
+        
+        max-height: 100%;
+        width: 100%; 
+        object-fit: cover;
+
+        @media  (max-width: 1023px)  {
+          & {
+            width: auto;
+            position: absolute;
+          }
+        }
+      }
+
+      .description {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 15px 25px;
+        background-color: rgb(182, 25, 25);
+        font-size: 30px;
+        @include sharedColor;
+        @include titleFont;
+
+        &.first {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

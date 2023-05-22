@@ -1,0 +1,20 @@
+<div class="search-block">
+  <div class="container">
+    <div class="filter-name">
+      <input
+        placeholder="Name"
+        type="search"
+        (input)="searchService.changeValueSearch($event.target.value)"
+      />
+    </div>
+    <div class="filter-data">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" [formControl]="date" panelClass="mat-datepicker-input">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker  startView="multi-year"
+            (monthSelected)="setMonthAndYear($event, picker)" panelClass="mat-datepicker"></mat-datepicker>
+          </mat-form-field>
+    </div>
+  </div>
+</div>

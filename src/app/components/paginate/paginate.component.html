@@ -1,0 +1,18 @@
+<ul class="dots-list" *ngIf="dots.length">
+  <ng-container>
+    <button [disabled]="page <= 1" (click)="paginateEvent(page - 1)">
+      <i class="bi bi-caret-left-fill"></i>
+    </button>
+    <li
+      *ngFor="let item of dots; let i = index"
+      (click)="paginateEvent(i + 1)"
+      [ngClass]="{ 'active': i + 1 === page }"
+      class="dots"
+    >
+      {{ i + 1 }}
+    </li>
+    <button [disabled]="page >= dots.length" (click)="paginateEvent(page + 1)">
+      <i class="bi bi-caret-right-fill"></i>
+    </button>
+  </ng-container>
+</ul>

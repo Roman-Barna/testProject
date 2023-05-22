@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="container">
+    <div class="logo" routerLink="/">
+      <img src="/assets/logo.png" alt="" />
+    </div>
+
+    <div class="burger" (click)="mobileBurger = !mobileBurger">
+      <i class="bi bi-menu-button-wide-fill"></i>
+    </div>
+    <nav
+      class="menu"
+      [ngClass]="{active: mobileBurger ? mobileBurger : false}"
+      [style.justify-content]="showMenu ? 'space-between' : 'flex-end'"
+      
+    >
+      <ul  class="menu-list" *ngIf="showMenu">
+        <li
+          routerLink="/movies"
+          routerLinkActive="active"
+          class="menu-item"
+        >
+          <img src="/assets/icon-movies.png" alt="" />
+          Movies
+        </li>
+        <li
+          routerLink="/series"
+          routerLinkActive="active"
+          class="menu-item"
+        >
+          <img src="/assets/icon-series.png" alt="" />
+          Series
+        </li>
+      </ul>
+      <ul class="menu-list">
+        <li [ngClass]="{'filter-active': startSearch}" class="menu-item filter" (click)="search()" *ngIf="showMenu">
+          <img src="/assets/icon-filter.png" alt="" />
+          Filters
+        </li>
+        <li class="menu-item login">
+          <img src="/assets/icon-login.png" alt="" />
+          Login
+        </li>
+      </ul>
+    </nav>
+    <button class="btn-header">Star your free trial</button>
+  </div>
+  <div class="block-mobile"></div>
+</header>

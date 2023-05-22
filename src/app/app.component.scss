@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+
+    @media  (max-width: 1024px)  {
+        & {
+            height:100%;
+            overflow: auto;
+        }
+    }
+}

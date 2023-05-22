@@ -1,0 +1,215 @@
+@import "/src/assets/baseStyle/mixins.scss";
+
+.header {
+  background-color: #000;
+  @include sharedColor;
+  @include titleFont;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+
+    @media  (max-width: 1280px)  {
+      & {
+        justify-content: space-evenly;
+      }
+    }
+    @media  (max-width: 1024px)  {
+      & {
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    .logo {
+      cursor: pointer;
+      flex-basis: 20%;
+      min-height: 50px;
+      
+      @media  (max-width: 1280px)  {
+        & {
+          width: 50%;
+        }
+      }
+      
+    }
+
+    .burger {
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 65%;
+      transform: translateX(-65%);
+
+      @media  (max-width: 1024px)  {
+        & {
+          display: block;
+        }
+      }
+      @media  (max-width: 450px)  {
+        & {
+          left: 98%;
+          transform: translateX(-98%);
+        }
+      }
+    }
+
+    .menu {
+      display: flex;
+      flex-basis: auto;
+      height: 100%;
+
+      @media  (max-width: 1024px)  {
+        & {
+          display: none;
+        }
+      }
+
+      &.active {
+        width: 100%;
+        display: flex;
+      }
+
+      .menu-list {
+        display: flex;
+        margin: 0;
+
+        @media  (max-width: 1280px)  {
+          & {
+            padding: 0 5px;
+          }
+          
+        }
+       
+
+        .menu-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 17px;
+          cursor: pointer;
+          list-style-type: none;
+
+          @media  (max-width: 1280px)  {
+            & {
+              padding: 15px;
+              font-size: 11px;
+            }
+
+            .container {
+              justify-content: center;
+            }
+            
+          }
+
+          @media  (max-width: 450px)  {
+            & {
+              padding: 10px 5px;
+            }
+            
+          }
+
+          img {
+            margin-right: 20px;
+          }
+
+          &:hover {
+            background-color: red;
+          }
+          
+
+          &.filter:hover {
+            background-color: rgba(63, 63, 63, 0.603)!important;
+          }
+
+          &.filter-active {
+            background-color: rgba(63, 63, 63, 0.603)!important;
+            position: relative;
+            // box-shadow: inset 0px 1px 0px 2px #ddd;
+
+            &::after, &::before {
+              content: "";
+              position: absolute;
+              top: 15%;
+              height: 70%;
+              width: 1px;
+              bottom: 15%;
+              background-color: rgba(255, 255, 255, 0.521);
+              box-shadow: 0 0  3px 3px rgba(221, 221, 221, 0.479);
+            }
+
+            &::after {
+              left: -2px;
+            }
+            &::before {
+              right: 2px;
+            }
+          }
+
+          &.active {
+            background-color: red;
+          }
+
+          &.filter:hover {
+            background-color: #000;
+          }
+        }
+      }
+    }
+
+    .btn-header {
+      
+      margin:0 0 0 15px;
+      padding: 7px;
+      border-radius: 15px;
+      border: none;
+      background-color: red;
+      @include sharedColor;
+      @include titleFont;
+      cursor: pointer;
+      transition: 0.4s ease;
+      position: relative;
+
+      @media  (max-width: 1280px)  {
+        & {
+          position: fixed;
+          top: 20px;
+          right: 5px;
+        }
+      }
+      @media  (max-width: 450px)  {
+        & {
+          font-size: 13px;
+          right: -15px;
+          display: none;
+        }
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 1px;
+        height: 100%;
+        background-color: #fff;
+
+        @media  (max-width: 1024px)  {
+          & {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+

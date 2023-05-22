@@ -1,0 +1,7 @@
+<div class="card" (mouseenter)="showDescription = !showDescription" (mouseleave)="showDescription = !showDescription">
+    <img [src]="card.images.posterArt.url" alt="">
+    <div class="show-info">
+        <p class="title">{{card.title}}</p>
+        <p *ngIf="showDescription" class="description">{{card.description | slice: 0: 100}}</p>
+    </div>
+</div>
